@@ -12,9 +12,11 @@ namespace KRISA.Presentacion
 {
     public partial class UIAgregarCamara : Form
     {
+        GestorCamara gestorCamara;
         public UIAgregarCamara()
         {
             InitializeComponent();
+            gestorCamara = new GestorCamara();
         }
 
         public void Agregar()
@@ -25,7 +27,7 @@ namespace KRISA.Presentacion
             camara.Dispositivo = comboDispositivo.Text;
 
             // Llamar al gestor de camara para agregar esa camara
-            GestorCamara gestorCamara = new GestorCamara();
+           
             gestorCamara.Agregar(camara);
 
         }
@@ -35,6 +37,15 @@ namespace KRISA.Presentacion
             Agregar();
         }
 
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ObtenerCamaras()
+        {
+            comboDispositivo.DataSource = gestorCamara.ObtenerCamaras();
+        }
        
 
     }

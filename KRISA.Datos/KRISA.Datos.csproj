@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KrisaDB.cs" />
     <Compile Include="ModuloCamara\CamaraDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

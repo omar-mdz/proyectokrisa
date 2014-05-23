@@ -7,6 +7,7 @@ namespace KRISA.Modelo.ModuloCamara
 {
     public class Camara
     {
+        public int ID { set; get; }
         public string Nombre { set; get; }
         public string Dispositivo { set; get; }
         public bool isActivo{ set; get; }

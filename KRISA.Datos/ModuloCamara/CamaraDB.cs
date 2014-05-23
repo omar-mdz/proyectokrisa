@@ -7,45 +7,76 @@ using KRISA.Modelo.ModuloCamara;
 
 namespace KRISA.Datos.ModuloCamara
 {
-    public class CamaraDB : DbContext
+    public class CamaraDB
     {
-        DbSet<Camara> Camaras { set; get; }
+        private KrisaDB db;
+
+        public CamaraDB()
+        {
+            db = new KrisaDB();
+        }
 
         public void Agregar(Camara camara)
         {
-            Camaras.Add(camara);
+            if(Verificar(camara)){
+                db.Camaras.Add(camara);
+                db.SaveChanges();
+            }
+
         }
         public void Suspender(Camara camara)
         {
+            Camara camaraSuspendida = Buscar(camara);
+            if (camaraSuspendida != null)
+            {
 
+                camaraSuspendida.isActivo = false;
+                db.SaveChanges();
+            }
         }
 
         public List<Camara> RecuperarTodas()
         {
-            //return camaras = from cam in Camaras select cam;
-            return null;
+            List<Camara> resultado;
+            return  resultado = (from cam in db.Camaras select cam).ToList<Camara>();
         }
 
         public Camara Buscar(Camara camara)
         {
-            // var camaraEncontrada = from cam in Camaras where cam.Nombre == camara.Nombre select cam;
-            //return camaraEncontrada;
-            return null;
+            var resultado = from cam in db.Camaras where cam == camara select cam;
+            Camara camaraEncontrada = resultado.First(); 
+            return camaraEncontrada;
         }
 
         public Camara Buscar(int idCamara)
         {
-            return null;
+            var resultado = from cam in db.Camaras where cam.ID == idCamara select cam;
+            Camara camaraEncontrada = resultado.First();
+            return camaraEncontrada;
         }
 
 
         public Camara Buscar(string nombreCamara)
         {
-            return null;
+            var resultado = from cam in db.Camaras where cam.Nombre == nombreCamara select cam;
+            Camara camaraEncontrada = resultado.First();
+            return camaraEncontrada;
         }
 
         public void Actualizar(Camara camara)
         {
+            Camara camaraActualizada = Buscar(camara);
+            if (camaraActualizada != null)
+            {
+                camaraActualizada = camara;
+                db.SaveChanges();
+            }
+        }
+
+        public bool Verificar(Camara camara)
+        {
+            var resultado = from cam in db.Camaras where cam.Nombre == camara.Nombre select cam;
+            return resultado.Count<Camara>() == 0 ? false : true;
         }
     }
 }
