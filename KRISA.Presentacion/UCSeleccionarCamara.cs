@@ -12,7 +12,8 @@ namespace KRISA.Presentacion
 {
     public partial class UCSeleccionarCamara : UserControl
     {
-        public Camara CamaraSeleccionada { set; get; } 
+        public Camara CamaraSeleccionada { set; get; }
+        public String nombreCamara;
         
         public UCSeleccionarCamara()
         {
@@ -37,6 +38,11 @@ namespace KRISA.Presentacion
                 }
             }
 
+        }
+
+        private void comboCamaras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nombreCamara = comboCamaras.Text;
         }
 
     }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace KRISA.Modelo.ModuloCamara
 {
     public class GestorCamara
@@ -18,7 +19,7 @@ namespace KRISA.Modelo.ModuloCamara
         // Agregar una cámara a la base de datos del sistema
         public void Agregar(Camara camara)
         {
-            
+
         }
         /* Pone inactiva una cámara en la base de datos
          * del sistema

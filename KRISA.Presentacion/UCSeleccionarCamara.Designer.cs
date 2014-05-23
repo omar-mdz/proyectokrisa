@@ -37,8 +37,9 @@
             this.comboCamaras.FormattingEnabled = true;
             this.comboCamaras.Location = new System.Drawing.Point(115, 3);
             this.comboCamaras.Name = "comboCamaras";
-            this.comboCamaras.Size = new System.Drawing.Size(170, 21);
+            this.comboCamaras.Size = new System.Drawing.Size(224, 21);
             this.comboCamaras.TabIndex = 0;
+            this.comboCamaras.SelectedIndexChanged += new System.EventHandler(this.comboCamaras_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -57,7 +58,7 @@
             this.Controls.Add(this.comboCamaras);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UCSeleccionarCamara";
-            this.Size = new System.Drawing.Size(299, 38);
+            this.Size = new System.Drawing.Size(391, 38);
             this.Load += new System.EventHandler(this.UCSeleccionarCamara_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

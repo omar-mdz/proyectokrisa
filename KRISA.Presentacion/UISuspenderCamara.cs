@@ -17,15 +17,32 @@ namespace KRISA.Presentacion
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void UISuspenderCamara_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdSuspender_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                GestorCamara gc = new GestorCamara();
+                Camara camaraSuspendida = gc.Buscar(ucSeleccionarCamara1.nombreCamara);
+                MessageBox.Show(ucSeleccionarCamara1.nombreCamara);
+                //gc.Suspender(camaraSuspendida);
+                //MessageBox.Show("Cámara [" + ucSeleccionarCamara1.nombreCamara + "] suspendida.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void cmdSuspender_Click(object sender, EventArgs e)
-        {
-            GestorCamara camara = new GestorCamara();
-            //camara.Suspender();
-        }
     }
 }
