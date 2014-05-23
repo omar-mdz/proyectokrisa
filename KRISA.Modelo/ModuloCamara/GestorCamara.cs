@@ -37,6 +37,7 @@ namespace KRISA.Modelo.ModuloCamara
             return true;
         }
 
+
         /* 
          * Busca una cámara en la base de datos del sistema
          * 
