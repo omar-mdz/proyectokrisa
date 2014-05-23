@@ -15,7 +15,7 @@ namespace KRISA.Modelo.ModuloCamara
         private FilterInfoCollection videoDevices;
 
 
-        // Agregar una cámara a la base de datos del sistema
+        // Agregar una cámara a la base de datos del sistemad 
         public void Agregar(Camara camara)
         {
             

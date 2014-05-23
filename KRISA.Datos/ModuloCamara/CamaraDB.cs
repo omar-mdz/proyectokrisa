@@ -10,7 +10,7 @@ namespace KRISA.Datos.ModuloCamara
     public class CamaraDB
     {
         private KrisaDB db;
-
+        // Ésto es lo que  agrego arturo ... pero recuerdo que puso comentariosy estan en gestor camara!!
         public CamaraDB()
         {
             db = new KrisaDB();
