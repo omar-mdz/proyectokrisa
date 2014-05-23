@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucSeleccionarCamara1 = new KRISA.Presentacion.UCSeleccionarCamara();
             this.cmdSuspender = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
+            this.ucSeleccionarCamara2 = new KRISA.Presentacion.UCSeleccionarCamara();
+            this.ucSeleccionarCamara1 = new KRISA.Presentacion.UCSeleccionarCamara();
             this.SuspendLayout();
-            // 
-            // ucSeleccionarCamara1
-            // 
-            this.ucSeleccionarCamara1.CamaraSeleccionada = null;
-            this.ucSeleccionarCamara1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucSeleccionarCamara1.Location = new System.Drawing.Point(8, 12);
-            this.ucSeleccionarCamara1.Name = "ucSeleccionarCamara1";
-            this.ucSeleccionarCamara1.Size = new System.Drawing.Size(299, 38);
-            this.ucSeleccionarCamara1.TabIndex = 0;
             // 
             // cmdSuspender
             // 
@@ -50,6 +42,7 @@
             this.cmdSuspender.TabIndex = 1;
             this.cmdSuspender.Text = "Suspender";
             this.cmdSuspender.UseVisualStyleBackColor = true;
+            this.cmdSuspender.Click += new System.EventHandler(this.cmdSuspender_Click);
             // 
             // cmdCancelar
             // 
@@ -61,14 +54,32 @@
             this.cmdCancelar.UseVisualStyleBackColor = true;
             this.cmdCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ucSeleccionarCamara2
+            // 
+            this.ucSeleccionarCamara2.CamaraSeleccionada = null;
+            this.ucSeleccionarCamara2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucSeleccionarCamara2.Location = new System.Drawing.Point(8, 12);
+            this.ucSeleccionarCamara2.Name = "ucSeleccionarCamara2";
+            this.ucSeleccionarCamara2.Size = new System.Drawing.Size(299, 38);
+            this.ucSeleccionarCamara2.TabIndex = 3;
+            // 
+            // ucSeleccionarCamara1
+            // 
+            this.ucSeleccionarCamara1.CamaraSeleccionada = null;
+            this.ucSeleccionarCamara1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucSeleccionarCamara1.Location = new System.Drawing.Point(8, 12);
+            this.ucSeleccionarCamara1.Name = "ucSeleccionarCamara1";
+            this.ucSeleccionarCamara1.Size = new System.Drawing.Size(299, 38);
+            this.ucSeleccionarCamara1.TabIndex = 0;
+            // 
             // UISuspenderCamara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 88);
+            this.Controls.Add(this.ucSeleccionarCamara2);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdSuspender);
-            this.Controls.Add(this.ucSeleccionarCamara1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UISuspenderCamara";
             this.Text = "Suspender Cámara";
@@ -81,5 +92,6 @@
         private UCSeleccionarCamara ucSeleccionarCamara1;
         private System.Windows.Forms.Button cmdSuspender;
         private System.Windows.Forms.Button cmdCancelar;
+        private UCSeleccionarCamara ucSeleccionarCamara2;
     }
 }

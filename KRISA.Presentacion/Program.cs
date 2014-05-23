@@ -15,7 +15,8 @@ namespace KRISA.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UIAgregarCamara());
+            //Application.Run(new UIAgregarCamara());
+            Application.Run(new UISuspenderCamara());
         }
     }
 }

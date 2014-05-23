@@ -42,9 +42,11 @@ namespace KRISA.Presentacion
             this.Close();
         }
 
-        private void ObtenerCamaras()
+        
+
+        private void UIAgregarCamara_Load(object sender, EventArgs e)
         {
-            comboDispositivo.DataSource = gestorCamara.ObtenerCamaras();
+
         }
        
 

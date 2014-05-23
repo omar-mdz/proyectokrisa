@@ -30,6 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG">
+      <HintPath>lib\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.VFW">
+      <HintPath>lib\AForge.Video.VFW.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

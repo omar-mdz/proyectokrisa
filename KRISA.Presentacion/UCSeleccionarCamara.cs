@@ -19,5 +19,25 @@ namespace KRISA.Presentacion
             InitializeComponent();
         }
 
+        private void UCSeleccionarCamara_Load(object sender, EventArgs e)
+        {
+            ObtenerCamaras();
+        }
+
+        private void ObtenerCamaras()
+        {
+            GestorCamara gestorCamara = new GestorCamara();
+            String[] nombreCamaras = gestorCamara.ObtenerCamaras();
+            if (nombreCamaras != null)
+            {
+                comboCamaras.Items.Clear();
+                foreach (String device in nombreCamaras)
+                {
+                    comboCamaras.Items.Add(device);
+                }
+            }
+
+        }
+
     }
 }

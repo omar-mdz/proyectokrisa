@@ -58,6 +58,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UCSeleccionarCamara";
             this.Size = new System.Drawing.Size(299, 38);
+            this.Load += new System.EventHandler(this.UCSeleccionarCamara_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

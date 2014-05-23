@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿using AForge.Video.DirectShow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,13 @@ namespace KRISA.Modelo.ModuloCamara
 {
     public class GestorCamara
     {
+
+        VideoCaptureDevice videoSource;
+
+        private bool DeviceExist = false;
+        private FilterInfoCollection videoDevices;
+
+
         // Agregar una cámara a la base de datos del sistema
         public void Agregar(Camara camara)
         {
@@ -49,9 +56,32 @@ namespace KRISA.Modelo.ModuloCamara
          * Obtiene la lista de dispositivos de video 
          * conectados al equipo
          */
-        public List<Camara> ObtenerCamaras()
+        public String[] ObtenerCamaras()
         {
-            throw new NotImplementedException();
+            try
+            {
+                videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                if (videoDevices.Count == 0)
+                    throw new ApplicationException();
+
+                DeviceExist = true;
+
+                String[] nombreCamaras = new String[videoDevices.Count];
+                int c = 0;
+                foreach (FilterInfo device in videoDevices)
+                {
+                    nombreCamaras[c] = device.Name;
+                    c++;
+                }
+
+                return nombreCamaras;
+            }
+            catch (ApplicationException)
+            {
+                DeviceExist = false;
+                return null;
+
+            }
         }
     }
 }
