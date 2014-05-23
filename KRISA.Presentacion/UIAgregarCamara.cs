@@ -27,7 +27,6 @@ namespace KRISA.Presentacion
             camara.Dispositivo = comboDispositivo.Text;
 
             // Llamar al gestor de camara para agregar esa camara
-           
             gestorCamara.Agregar(camara);
 
         }

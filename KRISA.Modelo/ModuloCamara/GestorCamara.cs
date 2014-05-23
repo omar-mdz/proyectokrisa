@@ -47,6 +47,7 @@ namespace KRISA.Modelo.ModuloCamara
             return null;
         }
 
+
         public Camara Buscar(string nombre)
         {
             return null;
