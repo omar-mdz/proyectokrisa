@@ -13,6 +13,7 @@ namespace KRISA.Presentacion
         [STAThread]
         static void Main()
         {
+            // PROBANDO COMMIT BRANCH PROYECTO KRISA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new UIAgregarCamara());
